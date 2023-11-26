@@ -6,10 +6,10 @@
     <div class="max-w-[1440px] mx-auto mb-[252px]">
       <div class="grid grid-cols-2 w-full">
         <div class="col-span-1 py-[121px] pl-[80px]">
-          <div class="bg-[gray] h-[5px] rounded-[5px] w-[100px]">
+          <div class="bg-[gray] h-[5px] rounded-[5px] w-[100px] relative">
             <p
-              :class="progressClass"
-              class="bg-[#B51D1D] h-full transition-all rounded-[5px]"
+              class="bg-[#B51D1D] h-full transition-all rounded-[5px] progress-animation"
+              :key="progressUpdate"
             ></p>
           </div>
           <h1
@@ -46,6 +46,7 @@
         <div
           class="col-span-1 bg-[#F1F2F4] relative"
           v-if="currentTitleIndex == 0"
+          :key="currentTitleIndex"
         >
           <img
             src="./../static/main2.png"
@@ -67,6 +68,7 @@
         <div
           class="col-span-1 bg-[#F1F2F4] relative"
           v-if="currentTitleIndex == 1"
+          :key="currentTitleIndex"
         >
           <img
             src="./../static/main2.png"
@@ -87,6 +89,7 @@
         <div
           class="col-span-1 bg-[#F1F2F4] relative"
           v-if="currentTitleIndex == 2"
+          :key="currentTitleIndex"
         >
           <img
             src="./../static/main2.png"
@@ -139,8 +142,10 @@
           </div>
         </div>
       </div>
-      <div class="px-[80px] py-[120px] grid grid-cols-10">
-        <div class="col-span-4 pr-[64px]">
+      <div class="px-[80px] py-[120px] grid grid-cols-10 relative">
+        <div class="col-span-4 pr-[64px]" >
+          <!-- <div :class="{'featureFixed': isFixed}"> -->
+          <div style="position: sticky; top: 100px">
           <p class="text-[#B51D1D] font-medium text-[16px] mt-[16px]">
             Features
           </p>
@@ -159,6 +164,7 @@
             GET STARTED
           </button>
         </div>
+      </div>
         <div class="col-span-6">
           <div
             class="px-[48px] py-[40px] flex justify-center items-center border-[1px] border-[#C9CDD2] rounded-[8px]"
@@ -498,8 +504,8 @@ export default {
       currentTitleIndex: 0,
       pageTitle: "CONNECTIONS",
       titleChanging: false,
-      divChanging: false,
       progressClass: "w-0 duration-0",
+      progressUpdate: 0,
     };
   },
   mounted() {
@@ -512,9 +518,10 @@ export default {
         this.titleChanging = false;
       }, 300);
       this.progressClass = "w-full duration-[8000ms]";
+      this.progressUpdate ++ ;
     }, 8000);
-  },
 
+  },
   head() {
     return {
       title: this.pageTitle,
@@ -599,7 +606,7 @@ export default {
   }
   100% {
     left: 0px;
-    top: 0px;
+    top: 30px;
   }
 }
 
@@ -611,4 +618,53 @@ export default {
   animation: none; /* Disable the animation */
   animation: fadeIn 2s ease-in-out; /* Reapply the animation */
 }
+
+.featureFixed {
+  position: fixed;
+  top: 0;
+  margin-top: 80px;
+}
+
+.progress-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation : customProgress 8s linear;
+}
+
+@keyframes customProgress {
+  0%   {width: 0%;}
+  25%  {width: 25%;}
+  50%  {width: 50%;}
+  75%  {width: 75%;}
+  100% {width: 100%;}
+}
+
+.ssr-carousel-back-icon, .ssr-carousel-next-icon {
+  border: 1px solid gray;
+  background-color: transparent;
+  opacity: 1 !important;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.ssr-carousel-back-icon::before {
+  background-image: url('../static/back.png');
+  background-repeat: no-repeat;
+  border: none;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+}
+.ssr-carousel-next-icon::before {
+  background-image: url('../static/next.png');
+  background-repeat: no-repeat;
+  border: none;
+    width: 100%;
+  height: 100%;
+  background-position: center center;
+}
+
+
 </style>
