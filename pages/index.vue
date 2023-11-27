@@ -4,7 +4,7 @@
   <div>
     <Header />
     <div class="max-w-[1440px] mx-auto mb-[252px]">
-      <div class="grid grid-cols-2 w-full">
+      <div class="grid grid-cols-1 md:grid-cols-2 w-full" >
         <div class="col-span-1 py-[121px] pl-[80px]">
           <div class="bg-[gray] h-[5px] rounded-[5px] w-[100px] relative">
             <p
@@ -13,7 +13,7 @@
             ></p>
           </div>
           <h1
-            class="text-[64px] font-normal text-[#272A31] leading-[67px] font-bebas mt-[56px]"
+            class="xl:text-[64px] lg:text-[50px] text-[40px] font-normal text-[#272A31] xl:leading-[67px] lg:leading-[50px] leading-[47px] font-bebas mt-[56px]"
           >
             POWERING
             <h1
@@ -25,7 +25,7 @@
             IN<br />
             THE POWERSPORTS WORLD
           </h1>
-          <p class="text-[18px] leading-[32px] text-[#61646B] mt-[32px]">
+          <p class="lg:text-[18px] text-[15px] lg:leading-[32px] leading-[25px] text-[#61646B] mt-[32px]">
             Are you a powersports company looking to expand your<br />
             dealership network or a dealership seeking industry updates<br />
             and incentives? PowerSports Connection bridges the gap.
@@ -50,7 +50,7 @@
         >
           <img
             src="./../static/main2.png"
-            class="absolute top-[40px] lg:w-[450px] xl:w-auto right-[80px] fade-in-image"
+            class=" top-[40px] lg:w-[450px] xl:w-auto right-[80px] fade-in-image"
             alt=""
           />
 
@@ -72,7 +72,7 @@
         >
           <img
             src="./../static/main2.png"
-            class="absolute top-[40px] lg:w-[450px] xl:w-auto right-[80px] fade-in-image"
+            class=" top-[40px] lg:w-[450px] xl:w-auto right-[80px] fade-in-image"
             alt=""
           />
           <img
@@ -93,7 +93,7 @@
         >
           <img
             src="./../static/main2.png"
-            class="absolute top-[40px] lg:w-[450px] xl:w-auto right-[80px] fade-in-image"
+            class=" top-[40px] lg:w-[450px] xl:w-auto right-[80px] fade-in-image"
             alt=""
           />
           <img
@@ -108,9 +108,9 @@
           />
         </div>
       </div>
-      <div class="px-[80px] py-[96px] flex justify-between">
+      <div class="px-[80px] py-[96px] flex justify-between flex-wrap">
         <div>
-          <p class="text-[#B51D1D] text-[16px] leading-[28px] font-medium">
+          <p class="text-[#B51D1D] text-[16px] leading-[28px] font-medium lg:self-center">
             Number
           </p>
           <h2
