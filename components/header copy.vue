@@ -7,20 +7,20 @@
                 <img class="opacity-[0.7] w-[35px]" src="../static/callapse.png" alt="">
             </button>
             <!-- Menu always visible on screens larger than 1000px -->
-            <div v-show="isMenuVisible || isLargeScreen" :class="{ 'h-screen border-t border-[#E0E3E6]' : isMenuVisible }" class=" flex justify-between items-center w-[65%] m_header_menu"
+            <div v-show="isMenuVisible || isLargeScreen" :class="{ 'h-screen' : !isMenuVisible }" class=" h-screen flex justify-between items-center w-[65%] m_header_menu"
                 id="m_header_menu">
-                <ul :class="{'self-start w-full':isMenuVisible}" class="flex justify-start text-[#272A31] text-[16px] gap-[20px] m_header_list">
-                    <li :class=" {'border-b-2': isMenuVisible}">
-                        <a href="#" :class="{'border-b-3 border-[red]': isMenuVisible}">For Dealers</a>
+                <ul class="flex justify-start items-center text-[#272A31] text-[16px] gap-[20px] m_header_list">
+                    <li>
+                        <a href="#">For Dealers</a>
                     </li>
-                    <li :class=" {'border-b-2': isMenuVisible}">
+                    <li>
                         <a href="#">For Brands</a>
                     </li>
-                    <li :class=" {'border-b-2': isMenuVisible}">
+                    <li>
                         <a href="#">Plans</a>
                     </li>
                 </ul>
-                <div class="m_header_btn" :class="{'mb-[20%]' : isMenuVisible}">
+                <div class="m_header_btn">
                     <button
                         class="px-[24px] py-[12px] border-[1px] border-[#45484F] text-[#45484F] text-[18px] rounded-[8px]">
                         Get Started
